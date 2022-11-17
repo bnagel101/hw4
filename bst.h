@@ -247,12 +247,12 @@ protected:
     virtual void nodeSwap( Node<Key,Value>* n1, Node<Key,Value>* n2) ;
 
     // Add helper functions here
-		static Node<Key, Value> *getRightMostNode(Node<Key, Value>* current);
-		static Node<Key, Value> *getLeftMostNode(Node<Key, Value>* current);
-	  int calculateHeightIfBalanced(Node<Key, Value>* root) const;
-		bool nodeBalanced(Node<Key, Value>* root) const;
-		static Node<Key, Value>* sucessor(Node<Key, Value>* current);
-		void deleteTree(Node<Key, Value>* current);
+    static Node<Key, Value> *getRightMostNode(Node<Key, Value>* current);
+    static Node<Key, Value> *getLeftMostNode(Node<Key, Value>* current);
+    int calculateHeightIfBalanced(Node<Key, Value>* root) const;
+    bool nodeBalanced(Node<Key, Value>* root) const;
+    static Node<Key, Value>* sucessor(Node<Key, Value>* current);
+    void deleteTree(Node<Key, Value>* current);
 
 protected:
     Node<Key, Value>* root_;
@@ -571,7 +571,7 @@ template<typename Key, typename Value>
 Node<Key, Value>*
 BinarySearchTree<Key, Value>::getRightMostNode(Node<Key, Value>* current){
 	Node<Key, Value>* temp = current;
-	if(temp == NULL){
+	if(temp == nullptr){
 		return current;
 	}
 	while(temp->getRight() != nullptr){
@@ -617,7 +617,7 @@ void BinarySearchTree<Key, Value>::clear()
     // TODO
     Node<Key, Value>* temp = root_;
     root_ = NULL;
-	deleteTree(temp);
+		deleteTree(temp);
 }
 
 template<class Key, class Value>
@@ -626,7 +626,7 @@ BinarySearchTree<Key, Value>::deleteTree(Node<Key, Value>* current){
 	if(current == NULL){
 		return;
 	}else{
-        deleteTree(current->getLeft());
+			deleteTree(current->getLeft());
 	    deleteTree(current->getRight());
 	    delete current;
     }
